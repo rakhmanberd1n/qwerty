@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+AB
+sa
+dadd
+=======
+AB
+sa
+dadd
+>>>>>>> aae11a7dea5174a8b7178398d1b3773aa45b90fa
+adsas
