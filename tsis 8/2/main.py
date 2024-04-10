@@ -1,6 +1,6 @@
 import pygame
 
-###Creating DrawRectangle function. This function will use pygame's event handler to get the mouse position when LMB is pressed and when it is released. It will then draw a rectangle using the two points as the opposite corners.
+
 def drawRectangle(screen):
     done = False
     start = None
@@ -19,7 +19,7 @@ def drawRectangle(screen):
                 if event.button == 1:
                     start = None
 
-        screen.fill((0, 0, 0))  # Clear the screen with a black background
+        screen.fill((0, 0, 0))  
         if start is not None and current is not None:
             pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(start, (current[0]-start[0], current[1]-start[1])), 1)
         pygame.display.flip()
@@ -33,12 +33,12 @@ def main():
     radius = 15
     mode = 'blue'
     points = []
-    rectangles = []  # List to store rectangles
-    circles = []  # List to store circles
+    rectangles = []  
+    circles = []  
     start = None
     current = None
-    tool = 'rectangle'  # Initialize tool to 'rectangle'
-    color = (255, 255, 255)  # Current color
+    tool = 'rectangle' 
+    color = (255, 255, 255)  
 
     colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255), (255, 255, 255), (0, 0, 0), (128, 128, 128), (255, 165, 0)]  # List of colors
 
@@ -78,36 +78,31 @@ def main():
                             break
                     if start is not None:
                         end = event.pos
-                        # When a shape is created, store its color
+                        
                         if tool == 'rectangle':
                             rectangles.append((pygame.Rect(start, (end[0]-start[0], end[1]-start[1])), color))
                         elif tool == 'circle':
                             radius = int(((end[0]-start[0])**2 + (end[1]-start[1])**2)**0.5)
                             circles.append((start, radius, color))
                         if tool == 'eraser':
-                            # Erase rectangles
+                           
                             rectangles = [(rect, rect_color) for rect, rect_color in rectangles if not rect.collidepoint(end)]
-                            # Erase circles
+                            
                             circles = [(center, radius, circle_color) for center, radius, circle_color in circles if ((end[0]-center[0])**2 + (end[1]-center[1])**2)**0.5 > radius]
                         start = None
                         current = None
 
         screen.fill((0, 0, 0))
 
-        # # When a shape is created, store its color
-        # if tool == 'rectangle':
-        #     rectangles.append((pygame.Rect(start, (end[0]-start[0], end[1]-start[1])), color))
-        # elif tool == 'circle':
-        #     radius = int(((end[0]-start[0])**2 + (end[1]-start[1])**2)**0.5)
-        #     circles.append((start, radius, color))
+        
 
-        # When a shape is drawn, use its stored color
+       
         for rect, rect_color in rectangles:
             pygame.draw.rect(screen, rect_color, rect, 1)
         for center, radius, circle_color in circles:
             pygame.draw.circle(screen, circle_color, center, radius, 1)
 
-        # When the temporary shape is drawn, use the current color
+        
         if start is not None and current is not None:
             if tool == 'rectangle':
                 pygame.draw.rect(screen, color, pygame.Rect(start, (current[0]-start[0], current[1]-start[1])), 1)
@@ -115,32 +110,18 @@ def main():
                 radius = int(((current[0]-start[0])**2 + (current[1]-start[1])**2)**0.5)
                 pygame.draw.circle(screen, color, start, radius, 1)
 
-         # Draw color selection panel
+        
         for i, col in enumerate(colors):
             pygame.draw.rect(screen, col, pygame.Rect(screen.get_width() - 20, i * 20, 20, 20))
 
 
 
-        # # draw all points
-        # i = 0
-        # while i < len(points) - 1:
-        #     drawLineBetween(screen, i, points[i], points[i + 1], radius, mode)
-        #     i += 1
+        
         
         pygame.display.flip()
         
         clock.tick(60)
-# if event.type == pygame.MOUSEBUTTONDOWN:
-            #     if event.button == 1: # left click grows radius
-            #         radius = min(200, radius + 1)
-            #     elif event.button == 3: # right click shrinks radius
-            #         radius = max(1, radius - 1)
-            
-            # if event.type == pygame.MOUSEMOTION:
-            #     # if mouse moved, add point to list
-            #     position = event.pos
-            #     points = points + [position]
-            #     points = points[-256:]
+
 def drawLineBetween(screen, index, start, end, width, color_mode):
     c1 = max(0, min(255, 2 * index - 256))
     c2 = max(0, min(255, 2 * index))
