@@ -13,18 +13,18 @@ screen.fill("white")
 speed = 5
 speed_player=5
 score = 0
-back_ground = pg.image.load("AnimatedStreet.png")
+back_ground = pg.image.load(r"c:\Users\lenovo\Desktop\pp\ppsis9\racer\AnimatedStreet.png")
 font = pg.font.SysFont("comicsansms", 60)
 font_small = pg.font.SysFont("comicsansms", 20)
 game_over = font.render("Game Over", True, "red")
-coin=["coin1.png","coin2.png","coin3.png","coin4.png","coin5.png","coin6.png"]
+coin=[r"coin1.png",r"coin2.png",r"coin3.png",r"coin4.png",r"coin5.png",r"coin6.png"]
 coin_sheet_index = 0
-bg_coin=["cn (2).png","cn (3).png","cn (4).png","cn (5).png","cn (6).png","cn (7).png",'cn (8).png',"cn (9).png","cn (10).png","cn (11).png"]
+bg_coin=[r"cn (2).png",r"cn (3).png",r"cn (4).png",r"cn (5).png",r"cn (6).png",r"cn (7).png",r'cn (8).png',r"cn (9).png",r"cn (10).png",r"cn (11).png"]
 point=0
 coin_sheet_index_= 0
-player1=pg.image.load("Player.png")
+player1=pg.image.load(r"c:\Users\lenovo\Desktop\pp\ppsis9\racer\Player.png")
 player1=pg.transform.scale(player1,(player1.get_width()//4,player1.get_height()//4))
-enem=pg.image.load("Enemy.png")
+enem=pg.image.load(r"c:\Users\lenovo\Desktop\pp\ppsis9\racer\Enemy.png")
 enem=pg.transform.scale(enem,(enem.get_width()//4,enem.get_height()//4))
 class player(pg.sprite.Sprite):
     def __init__(self):
@@ -52,7 +52,7 @@ class Coin(pg.sprite.Sprite):
         super().__init__()
         global x
         x=random.randint(4,7)
-        self.image = pg.transform.scale(pg.image.load(coin[coin_sheet_index]), (pg.image.load(coin[coin_sheet_index]).get_width()//x, pg.image.load(coin[coin_sheet_index]).get_height()//x))
+        self.image = pg.transform.scale(pg.image.load(coin([coin_sheet_index])), (pg.image.load(coin[coin_sheet_index]).get_width()//x, pg.image.load(coin[coin_sheet_index]).get_height()//x))
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, W-40), 0)
 

@@ -8,7 +8,7 @@ FPS = 60
 screen = pygame.display.set_mode((W, H), pygame.RESIZABLE)
 clock = pygame.time.Clock()
 done = False
-bg = (255, 192, 203)
+bg = (194, 255, 201)
 
 paddleW = 200
 paddleH = 25
@@ -38,8 +38,8 @@ while not done:
 
     screen.fill(bg)
     
-    pygame.draw.rect(screen, pygame.Color(234, 250, 177), paddle)
-    pygame.draw.circle(screen, pygame.Color(250, 241, 157), ball.center, ballRadius)
+    pygame.draw.rect(screen, pygame.Color(110, 13, 248), paddle)
+    pygame.draw.circle(screen, pygame.Color(110, 13, 248), ball.center, ballRadius)
     
     
     #Paddle Control

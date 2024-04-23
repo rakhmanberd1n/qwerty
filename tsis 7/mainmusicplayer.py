@@ -7,18 +7,18 @@ screen = pygame.display.set_mode((444, 200))
 pygame.display.set_caption("AIU MusicPlayer")
 
 
-music_files = ["C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Arctic_Monkeys_-_I_Wanna_Be_Yours_47842917.mp3", "C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Ed_Sheeran_-_Perfect_47828368.mp3",
-               "C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Glass_Animals_-_Heat_Waves_74022754.mp3","C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Lord_Huron_-_take_me_back_to_the_night_we_met_75457535.mp3"]
+music_files = [r"C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Arctic_Monkeys_-_I_Wanna_Be_Yours_47842917.mp3", r"C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Ed_Sheeran_-_Perfect_47828368.mp3",
+               r"C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Glass_Animals_-_Heat_Waves_74022754.mp3",r"C:\Users\lenovo\Desktop\pp\tsis 7\sounds\Lord_Huron_-_take_me_back_to_the_night_we_met_75457535.mp3"]
 current_music = 0
 pygame.mixer.music.load(music_files[current_music])
 
 font = pygame.font.SysFont(None, 48)
 
 
-play_text = font.render("Play", True, (0, 128, 0))
-stop_text = font.render("Stop", True, (128, 0, 110))
-next_text = font.render("Next", True, (0, 120, 128))
-prev_text = font.render("Prev", True, (128, 128, 128))
+play_text = font.render("PLAY", True, (99, 45, 156))
+stop_text = font.render("STOP", True, (128, 0, 110))
+next_text = font.render("NEXT", True, (0, 120, 128))
+prev_text = font.render("PREV", True, (128, 128, 128))
 
 
 play_rect = play_text.get_rect()
@@ -55,7 +55,7 @@ while running:
                 pygame.mixer.music.play()
 
     
-    screen.fill((0, 255, 0))
+    screen.fill((0, 0, 0))
     screen.blit(play_text, play_rect)
     screen.blit(stop_text, stop_rect)
     screen.blit(next_text, next_rect)

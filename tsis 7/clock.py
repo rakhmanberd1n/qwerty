@@ -12,9 +12,9 @@ def rot_center(image, angle, x, y):
 
 H, W = 700, 700
 screen = pygame.display.set_mode((H, W))
-mickey = pygame.image.load("C:\Users\lenovo\Desktop\pp\tsis 7\images\mickeyclock.jpg")
-hand = pygame.image.load("C:\Users\lenovo\Desktop\pp\tsis 7\images\minute.png")
-hand1 = pygame.image.load("C:\Users\lenovo\Desktop\pp\tsis 7\images\second.png")
+mickey = pygame.image.load(r"C:\Users\lenovo\Desktop\pp\tsis 7\images\mickeyclock.jpg")
+hand = pygame.image.load(r"C:\Users\lenovo\Desktop\pp\tsis 7\images\minute.png")
+hand1 = pygame.image.load(r"C:\Users\lenovo\Desktop\pp\tsis 7\images\second.png")
 
 
 mickey = pygame.transform.scale(mickey, (H, W))

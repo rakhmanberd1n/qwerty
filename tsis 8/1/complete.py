@@ -3,7 +3,7 @@ import random
 import time
 pygame.init()
 
-W, H = 1200, 800
+W, H = 1000, 600
 FPS = 60
 
 screen = pygame.display.set_mode((W, H), pygame.RESIZABLE)
@@ -33,7 +33,7 @@ game_score_rect = game_score_text.get_rect()
 game_score_rect.center = (210, 20)
 
 # Catching sound
-collision_sound = pygame.mixer.Sound('C:\Users\lenovo\Desktop\pp\tsis 8\1\catch.mp3')
+collision_sound = pygame.mixer.Sound(r'C:\Users\lenovo\Desktop\pp\tsis 8\1\catch.mp3')
 
 # Additional parameters
 unbreakable_chance = 0.05  # Chance for a brick to be unbreakable

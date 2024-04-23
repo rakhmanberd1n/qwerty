@@ -15,11 +15,11 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 screen = pg.display.set_mode((800, 600))
 pg.display.set_caption("Змейка")
-mus=pg.mixer.Sound("kk.mp3")
+mus=pg.mixer.Sound(r"c:\Users\lenovo\Desktop\pp\ppsis9\snake\kk.mp3")
 
 
 
-back_graund=pg.image.load("fsnake.png")
+back_graund=pg.image.load(r"c:\Users\lenovo\Desktop\pp\ppsis9\snake\fsnake.png")
 back_graund=pg.transform.scale(back_graund,(800,600))
 
 clock = pg.time.Clock()
